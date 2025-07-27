@@ -17,7 +17,7 @@ export const homeContent = {
     githubLink: "https://github.com/ramyalnp",
     githubLabel: "GitHub",
     githubDescription: "where I share code for data-driven biology, or my",
-    linkedinLink: "https://www.linkedin.com/in/ramya0001/",
+    linkedinLink: "https://www.linkedin.com/in/bhargaviks-270169/",
     linkedinLabel: "LinkedIn",
     linkedinDescription: ". If not—feel free to check them out!"
   },
