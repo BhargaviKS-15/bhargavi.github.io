@@ -18,7 +18,7 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="flex items-center justify-between max-w-6xl mx-auto px-6 py-4">
         <div className="text-xl font-semibold text-foreground">
-          <span className="font-normal">Ramya</span> Lakshminarasimhan
+          <span className="font-normal">Bhargavi</span> KS
         </div>
         
         <div className="flex items-center space-x-8">
