@@ -10,8 +10,8 @@ const Index = () => {
           <div className="flex-1 order-2 lg:order-1 space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-foreground leading-relaxed text-base sm:text-lg">
-                Hi, I'm Ramya—a biomedical engineer and biotech graduate from{" "}
-                <em className="text-foreground">Cornell University</em>, now working full-time at{" "}
+               Hey Frans! My name is Bhargavi Srinath MPH student  at {" "}
+                <em className="text-foreground">Icahn School of Medicine</em>, now working full-time at{" "}
                 <a
                   href="https://www.svenssonlabstanford.org/"
                   className="text-primary hover:underline"
