@@ -1,32 +1,10 @@
+import React from "react";
 import Navigation from "@/components/Navigation";
 import { useState } from "react";
+import { projectsContent } from "@/content/projects";
 
 const Projects = () => {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
-
-  const projects = [
-    {
-      id: 1,
-      title: "METABOLIC REGULATION",
-      subtitle: "Understanding the human secretome for potential drug targets to treat metabolic dysfunctions",
-      description: "Research focused on identifying key secreted factors that regulate metabolism and could serve as therapeutic targets for metabolic diseases including diabetes, obesity, and fatty liver disease.",
-      image: "/lovable-uploads/metabolic-regulation.jpg"
-    },
-    {
-      id: 2,
-      title: "AUTISM SPECTRUM DISORDERS",
-      subtitle: "Investigating altered neural development using organoid models",
-      description: "Using iPSC-derived organoid models to study altered somatosensory function and neural development in autism spectrum disorders, with focus on peripheral nervous system manifestations.",
-      image: "/lovable-uploads/autism-spectrum.jpg"
-    },
-    {
-      id: 3,
-      title: "ATTR-CM",
-      subtitle: "Uncovering the role of the extracellular matrix in the occurrence of Amyloid Transthyretin Cardiomyopathy",
-      description: "Investigating how extracellular matrix changes contribute to cardiac dysfunction in ATTR-CM, using both computational and experimental approaches to understand disease progression.",
-      image: "/lovable-uploads/attr-cm.jpg"
-    }
-  ];
 
   const toggleProject = (id: number) => {
     setExpandedProject(expandedProject === id ? null : id);
@@ -37,13 +15,13 @@ const Projects = () => {
       <Navigation />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-12">
         <div className="mb-12">
-          <h1 className="text-4xl font-light text-foreground mb-4">Projects</h1>
-          <p className="text-text-subtle text-lg">A growing collection of my blood sweat and tears ;)</p>
+          <h1 className="text-4xl font-light text-foreground mb-4">{projectsContent.title}</h1>
+          <p className="text-text-subtle text-lg">{projectsContent.subtitle}</p>
         </div>
 
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 pt-16">
-            {projects.map((project) => (
+            {projectsContent.projects.map((project) => (
               <div
                 key={project.id}
                 className={`bg-project-card border border-border rounded-lg overflow-hidden transition-all duration-300 cursor-pointer hover:bg-project-card-hover hover:shadow-lg ${

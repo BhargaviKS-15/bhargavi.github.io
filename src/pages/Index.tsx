@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import { homeContent } from "@/content/index";
 
 const Index = () => {
   return (
@@ -10,63 +11,62 @@ const Index = () => {
           <div className="flex-1 order-2 lg:order-1 space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-foreground leading-relaxed text-base sm:text-lg">
-                Hi, I'm Ramya—a biomedical engineer and biotech graduate from{" "}
-                <em className="text-foreground">Cornell University</em>, now working full-time at{" "}
+                {homeContent.introduction.greeting}{" "}
+                <em className="text-foreground">{homeContent.introduction.university}</em>, {homeContent.introduction.currentWork}{" "}
                 <a
-                  href="https://www.svenssonlabstanford.org/"
+                  href={homeContent.introduction.stanfordLink}
                   className="text-primary hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Stanford University
+                  {homeContent.introduction.stanfordText}
                 </a>
-                , where I study how the brain regulates whole-body physiology, especially metabolism and appetite. I work at the interface of stem cell biology, neurobiology, and metabolic disease, using both experimental and computational approaches to understand how disrupted molecular signaling can lead to conditions like fatty liver disease, obesity, or neurodevelopmental disorders.
+                , {homeContent.introduction.researchDescription}
               </p>
 
               <p className="text-foreground leading-relaxed text-base sm:text-lg">
-                My research blends CRISPR-based gene editing, iPSC-derived organoid models, transcriptomics, and machine learning. I've built analysis pipelines for large-scale single-cell and spatial transcriptomic data, and I use these tools to dissect cellular heterogeneity, model disease progression, and identify new therapeutic targets.
+                {homeContent.researchApproach.description}
               </p>
 
               <p className="text-foreground leading-relaxed text-base sm:text-lg">
-                You might've come across my{" "}
+                {homeContent.socialLinks.githubText}{" "}
                 <a
-                  href="https://github.com/ramyalnp"
+                  href={homeContent.socialLinks.githubLink}
                   className="text-primary hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub
+                  {homeContent.socialLinks.githubLabel}
                 </a>{" "}
-                where I share code for data-driven biology, or my{" "}
+                {homeContent.socialLinks.githubDescription}{" "}
                 <a
-                  href="https://www.linkedin.com/in/ramya0001/"
+                  href={homeContent.socialLinks.linkedinLink}
                   className="text-primary hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  LinkedIn
+                  {homeContent.socialLinks.linkedinLabel}
                 </a>
-                . If not—feel free to check them out!
+                {homeContent.socialLinks.linkedinDescription}
               </p>
 
               <p className="text-foreground leading-relaxed text-base sm:text-lg">
-                Beyond the lab, I'm passionate about science that translates—whether that's exploring regulatory frameworks for emerging biotechnologies, drug discovery or surgical robots, I'm always open to teaming up on new ideas, writing, or research. Reach me at{" "}
+                {homeContent.collaboration.description}{" "}
                 <a
-                  href="mailto:rl001@stanford.edu"
+                  href={homeContent.collaboration.emailLink}
                   className="text-primary hover:underline"
                 >
-                  rl001@stanford.edu
+                  {homeContent.collaboration.email}
                 </a>{" "}
-                if you're curious to collaborate.
+                {homeContent.collaboration.closing}
               </p>
 
               <div className="mt-8">
-                <p className="text-foreground font-medium mb-4 text-base sm:text-lg">Right now, I'm especially excited by:</p>
+                <p className="text-foreground font-medium mb-4 text-base sm:text-lg">{homeContent.interests.title}</p>
                 <ul className="space-y-2 text-foreground text-base sm:text-lg">
-                  <li>• Generative models to simulate cell state transitions and perturbations</li>
-                  <li>• Building reproducible pipelines for single-cell and spatial -omics data</li>
-                  <li>• Using stem cell and in-vivo models to study disease mechanisms</li>
-                  <li>• Modeling protein structure and dynamics to understand cellular signaling</li>
+                  {homeContent.interests.items.map((item, index) => (
+                    <li key={index}>• {item}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -77,7 +77,7 @@ const Index = () => {
             <div className="w-48 h-60 sm:w-56 sm:h-70 lg:w-64 lg:h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
               <div className="text-primary/60 text-4xl sm:text-5xl lg:text-6xl">👩‍🔬</div>
             </div>
-            <p className="text-center text-text-subtle mt-4 text-sm">San Francisco, CA</p>
+            <p className="text-center text-text-subtle mt-4 text-sm">{homeContent.location}</p>
           </div>
         </div>
       </main>
