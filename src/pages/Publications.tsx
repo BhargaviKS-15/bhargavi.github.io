@@ -2,7 +2,6 @@ import Navigation from "@/components/Navigation";
 import { publicationsContent } from "@/content/publications";
 
 const Publications = () => {
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -17,7 +16,19 @@ const Publications = () => {
               </div>
               <div className="flex-1">
                 <p className="text-foreground leading-relaxed">
-                  {pub.authors} ({pub.year}). {pub.title}{" "}
+                  {pub.authors} ({pub.year}).{" "}
+                  {pub.link ? (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      {pub.title}
+                    </a>
+                  ) : (
+                    pub.title
+                  )}{" "}
                   <em className="text-foreground">{pub.journal}</em>
                   {pub.volume && (
                     <span className="text-foreground">, {pub.volume}</span>

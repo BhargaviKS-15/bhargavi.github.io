@@ -2,6 +2,13 @@ import Navigation from "@/components/Navigation";
 import { homeContent } from "@/content/index";
 
 const Index = () => {
+  // Function to render text with bold formatting
+  const renderFormattedText = (text: string) => {
+    return text.split('**').map((part, index) => 
+      index % 2 === 1 ? <strong key={index}>{part}</strong> : part
+    );
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -10,8 +17,8 @@ const Index = () => {
           {/* Content - Left side on desktop */}
           <div className="flex-1 order-2 lg:order-1 space-y-6">
             <div className="prose prose-lg max-w-none">
-              <p className="text-foreground leading-relaxed text-base sm:text-lg">
-                {homeContent.introduction.greeting}{" "}
+              <p className="text-foreground leading-relaxed text-base sm:text-lg text-justify">
+                {renderFormattedText(homeContent.introduction.greeting)}{" "}
                 <em className="text-foreground">{homeContent.introduction.university}</em>, {homeContent.introduction.currentWork}{" "}
                 <a
                   href={homeContent.introduction.stanfordLink}
@@ -24,11 +31,11 @@ const Index = () => {
                 , {homeContent.introduction.researchDescription}
               </p>
 
-              <p className="text-foreground leading-relaxed text-base sm:text-lg">
+              <p className="text-foreground leading-relaxed text-base sm:text-lg text-justify">
                 {homeContent.researchApproach.description}
               </p>
 
-              <p className="text-foreground leading-relaxed text-base sm:text-lg">
+              <p className="text-foreground leading-relaxed text-base sm:text-lg text-justify">
                 {homeContent.socialLinks.githubText}{" "}
                 <a
                   href={homeContent.socialLinks.githubLink}
@@ -50,7 +57,7 @@ const Index = () => {
                 {homeContent.socialLinks.linkedinDescription}
               </p>
 
-              <p className="text-foreground leading-relaxed text-base sm:text-lg">
+              <p className="text-foreground leading-relaxed text-base sm:text-lg text-justify">
                 {homeContent.collaboration.description}{" "}
                 <a
                   href={homeContent.collaboration.emailLink}
@@ -65,7 +72,7 @@ const Index = () => {
                 <p className="text-foreground font-medium mb-4 text-base sm:text-lg">{homeContent.interests.title}</p>
                 <ul className="space-y-2 text-foreground text-base sm:text-lg">
                   {homeContent.interests.items.map((item, index) => (
-                    <li key={index}>• {item}</li>
+                    <li key={index}>• {renderFormattedText(item)}</li>
                   ))}
                 </ul>
               </div>
@@ -74,8 +81,12 @@ const Index = () => {
 
           {/* Profile Image - Right side on desktop */}
           <div className="flex-shrink-0 order-1 lg:order-2 mx-auto lg:mx-0">
-            <div className="w-48 h-60 sm:w-56 sm:h-70 lg:w-64 lg:h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-              <div className="text-primary/60 text-4xl sm:text-5xl lg:text-6xl">👩‍🔬</div>
+            <div className="w-48 h-60 sm:w-56 sm:h-70 lg:w-64 lg:h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center overflow-hidden">
+              <img 
+                src="/images/bioinformatics-dna.jpg" 
+                alt="Bioinformatics and DNA visualization" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <p className="text-center text-text-subtle mt-4 text-sm">{homeContent.location}</p>
           </div>
