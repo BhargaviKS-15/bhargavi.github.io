@@ -19,7 +19,7 @@ export const projectsContent = {
       company: "Christ (Deemed to be University)",
       location: "Bengaluru, Karnataka, India",
       description: "Conducted research on bioprospecting of multi-copper oxidase from mushrooms and PETase from bacteria for sustainable wastewater treatment applications. This project focused on developing eco-friendly solutions for environmental remediation using biological systems, contributing to sustainable environmental practices and circular economy principles.",
-      image: "/images/wastewater-treatment.jpg"
+      image: "public/images/poster1.jpg"
     },
     {
       id: 3,
